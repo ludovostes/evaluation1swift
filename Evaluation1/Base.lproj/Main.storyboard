@@ -81,6 +81,10 @@
                                     <constraint firstAttribute="height" constant="128" id="0Eu-Ag-eKq"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fw9-3q-4t6">
+                                <rect key="frame" x="186" y="479" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yl-4K-xrC">
                                 <rect key="frame" x="78.666666666666671" y="727" width="235.66666666666663" height="35"/>
                                 <constraints>
@@ -91,6 +95,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="download" destination="BYZ-38-t0r" eventType="touchUpInside" id="Px0-n7-ghO"/>
                                     <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NbC-jY-VlT"/>
                                 </connections>
                             </button>
@@ -122,6 +127,7 @@
                     <connections>
                         <outlet property="buttonLogin" destination="7Yl-4K-xrC" id="rI3-t0-0Zb"/>
                         <outlet property="eyes" destination="DR7-OT-mfV" id="lxI-7y-N5q"/>
+                        <outlet property="loader" destination="fw9-3q-4t6" id="EeY-rg-3hD"/>
                         <outlet property="login" destination="aU9-dc-WCF" id="dru-lE-UJ6"/>
                         <outlet property="mySwitch" destination="8XE-0q-J61" id="WO8-Pb-Vn3"/>
                         <outlet property="password" destination="Rac-Vl-9ij" id="2NS-Gr-TU3"/>

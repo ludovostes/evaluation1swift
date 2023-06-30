@@ -16,12 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonLogin: UIButton!
     @IBOutlet weak var profil: UIImageView!
     // @IBOutlet weak var circle: UIView!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         mySwitch.isOn = false
+        loader.isHidden = true
         
         // PROFIL
         profil.layer.cornerRadius = profil.frame.height / 2
@@ -36,8 +38,10 @@ class ViewController: UIViewController {
         
         // CHOIX DU CLAVIER
         login.keyboardType = .emailAddress
+        
+        // EYES
+//        var isHidden:Bool = true
     }
-    
     
     // ACTION POPUP BOUTON
     @IBAction func loginButtonTapped(_ sender: UIButton) {
@@ -75,6 +79,23 @@ class ViewController: UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
-
+    
+    // BONUS
+    @IBAction func download() {
+        loader.isHidden = false
+        loader.startAnimating()
+        
+        makeStuff()
+    }
+    
+    func makeStuff() {
+        DispatchQueue.global(qos: .default).async {
+            sleep(3)
+            DispatchQueue.main.async {
+                self.loader.isHidden = true
+                self.loader.stopAnimating()
+            }
+        }
+    }
 }
 
