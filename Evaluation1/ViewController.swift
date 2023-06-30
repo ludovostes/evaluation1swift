@@ -39,8 +39,6 @@ class ViewController: UIViewController {
         // CHOIX DU CLAVIER
         login.keyboardType = .emailAddress
         
-        // EYES
-//        var isHidden:Bool = true
     }
     
     // ACTION POPUP BOUTON
